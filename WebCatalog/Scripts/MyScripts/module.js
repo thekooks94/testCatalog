@@ -6,7 +6,6 @@ app.factory("ShareData", function () {
 
 //Showing Routing  
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-    debugger;
     $routeProvider.when('/homepage',
         {
             templateUrl: 'Home/HomePage',

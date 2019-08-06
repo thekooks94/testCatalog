@@ -6,40 +6,23 @@
     <title>@ViewBag.Title - Applicazione ASP.NET</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Nome dell'applicazione", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </div>
+   
     <div class="container body-content">
         @RenderBody()
-        @RenderSection("SPAViews", required: false)
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - Applicazione ASP.NET</p>
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("Scripts", required: false)
+    @section scripts{
+        <script type="text/javascript" src="@Url.Content("~/Scripts/angular.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/angular-route.min.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/MyScripts/module.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/MyScripts/homeController.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/MyScripts/listController.js")"></script>
+    }
 </body>
 </html>

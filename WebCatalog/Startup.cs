@@ -12,7 +12,6 @@ namespace WebCatalog
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
         }
     }
 }
