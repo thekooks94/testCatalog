@@ -1,25 +1,23 @@
 ﻿var app = angular.module("ApplicationModule", ["ngRoute"]);
 
-app.factory("ShareData", function () {
-    return { value: 0 }
-});
-
 //Showing Routing  
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider.when('/homepage',
         {
             templateUrl: 'Home/HomePage',
-            controller: 'HomeController'
+            controller: 'homeController'
         });
     $routeProvider.when('/list',
         {
             templateUrl: 'Home/List',
-            controller: 'ListController'
+            controller: 'listController'
         });
     $routeProvider.otherwise(
         {
             redirectTo: '/'
         });
 
-    $locationProvider.html5Mode(true).hashPrefix('!');
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false}).hashPrefix('!');
 }]); 

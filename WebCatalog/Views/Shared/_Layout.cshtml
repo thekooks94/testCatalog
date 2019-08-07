@@ -4,11 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <title>@ViewBag.Title - Applicazione ASP.NET</title>
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="https://img.icons8.com/clouds/100/000000/bookmark-ribbon.png" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-   
+
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -17,12 +17,6 @@
         </footer>
     </div>
 
-    @section scripts{
-        <script type="text/javascript" src="@Url.Content("~/Scripts/angular.js")"></script>
-        <script type="text/javascript" src="@Url.Content("~/Scripts/angular-route.min.js")"></script>
-        <script type="text/javascript" src="@Url.Content("~/Scripts/MyScripts/module.js")"></script>
-        <script type="text/javascript" src="@Url.Content("~/Scripts/MyScripts/homeController.js")"></script>
-        <script type="text/javascript" src="@Url.Content("~/Scripts/MyScripts/listController.js")"></script>
-    }
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

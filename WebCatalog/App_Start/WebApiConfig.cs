@@ -14,8 +14,8 @@ namespace WebCatalog
         {
             // Servizi e configurazione di Web API
             // Configurare Web API per usare solo l'autenticazione con token di connessione.
-            config.SuppressDefaultHostAuthentication();
-            config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
+            //config.SuppressDefaultHostAuthentication();
+            //config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 
             // Utilizzare la notazione Camel per i dati JSON.
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
