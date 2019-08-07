@@ -7,9 +7,7 @@ namespace WebCatalog.Models
 {
     public class Product : EntityBase
     {
-        public string ProductName { get; set; }
-        public Category Category { get; set; }
         public string Description { get; set; }
-        public string LinkImage { get; set; }
+        public int Quantity { get; set; }
     }
 }

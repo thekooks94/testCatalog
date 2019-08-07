@@ -8,14 +8,21 @@ namespace WebCatalog.FakeData
 {
     public class FakeCatalog
     {
-        public Catalog catalog { get; set; }
+        public Catalog Catalog { get; set; }
 
         public FakeCatalog()
         {
-            catalog = new Catalog { Products = new List<Product>() {
-                new Product { Id = "000", Category = Category.TV, ProductName = "", Description = "", LinkImage = "" },
-                new Product { Id = "001", Category = Category.TV , ProductName = "", Description = "", LinkImage = "" }
-            }};
+            Catalog = new Catalog
+            {
+                Products = new Dictionary<string, Product>() {
+                {"seagate expansion portable 1tb disco rigido esterno nero", new Product { Name = "Seagate Expansion Portable 1TB disco rigido esterno Nero", Description = "", Quantity = 8 }},
+                {"google home", new Product { Name = "Google Home", Description = "L'Assistente Google per la casa con controllo vocale.", Quantity = 11 }},
+                {"canon eos 4000d kit fotocamere", new Product { Name = "Canon EOS 4000D Kit fotocamere", Description = "", Quantity = 2 }},
+                {"samsung galaxy", new Product { Name = "Samsung Galaxy", Description = "", Quantity = 1 }},
+                {"ninebot by segway", new Product { Name = "Ninebot by Segway", Description = "Continua ad esplorare ovunque tu vada.", Quantity = 5 }},
+                {"electroline set di valigie trolley", new Product { Name = "Electroline set di valigie trolley", Description = "Ginza Set Trolley Rigide c/TSA Lock Pic + Med + Gr Blue. Set trolley rigidi", Quantity = 6 }}
+                }
+            };
         }
     }
 }

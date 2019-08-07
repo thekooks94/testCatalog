@@ -9,9 +9,8 @@ namespace WebCatalog.Repositories
 {
     public interface IRepository<T> where T : EntityBase
     {
-        T GetById(int id);
+        T GetByName(string name);
         void Create(T entity);
-        void Delete(T entity);
-        void Update(T entity);
+        IEnumerable<T> GetAllEntity();
     }
 }

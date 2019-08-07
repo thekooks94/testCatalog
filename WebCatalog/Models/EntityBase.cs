@@ -7,6 +7,6 @@ namespace WebCatalog.Models
 {
     public abstract class EntityBase
     {
-        public string Id { get; set; }
+        public string Name { get; set; }
     }
 }

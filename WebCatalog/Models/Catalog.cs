@@ -7,6 +7,6 @@ namespace WebCatalog.Models
 {
     public class Catalog
     {
-        public IEnumerable<Product> Products { get; set; }
+        public IDictionary<string, Product> Products { get; set; }
     }
 }
