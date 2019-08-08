@@ -1,0 +1,21 @@
+﻿<link href="~/Content/css/catalog.css" rel="stylesheet" />
+
+<h2>Catalogo</h2>
+<p>Qui sono presenti tutti i prodotti del nostro catalogo.</p>
+
+<div class="row">
+
+    <p id="no-products" style="display:none;">Nel catalogo non sono presenti prodotti.</p>
+
+    <div class="column" ng-repeat="product in products">
+        <div class="card">
+            <h3>{{product.name}}</h3>
+            <p>{{product.description}}</p>
+            <p>Quantità: <span>{{product.quantity}}</span></p>
+        </div>
+    </div>
+
+</div>
+
+<br/>
+<br/>

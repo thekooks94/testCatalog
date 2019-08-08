@@ -18,7 +18,7 @@ namespace WebCatalog.Repositories
 
         public void Create(Product entity)
         {
-            if(entity == null || string.IsNullOrEmpty(entity.Name) || entity.Quantity < 0)
+            if(entity == null || string.IsNullOrEmpty(entity.Name) || entity.Quantity <= 0)
             {
                 throw new Exception("Campi inseriti non validi");
             }

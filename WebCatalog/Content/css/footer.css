@@ -1,0 +1,11 @@
+﻿footer {
+    background-color: rgb(28, 35, 49);
+    color: white;
+    font-family: Roboto, sans-serif !important;
+}
+
+footer.page-footer .footer-copyright {
+    overflow: hidden;
+    background-color: rgba(0,0,0,.2);
+    color: rgba(255,255,255,.6);
+}
