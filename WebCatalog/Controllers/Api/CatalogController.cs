@@ -19,11 +19,27 @@ namespace WebCatalog.Controllers.Api
         }
 
         [HttpGet]
-        [Route("take")]
-        public IEnumerable<string> Get()
+        [Route("getAllProducts")]
+        public IEnumerable<Product> GetAllProducts()
         {
             var products = catalogRepository.GetAllEntity();
-            return products.Select(p => p.Name);
+            return products;
+        }
+
+        [HttpGet]
+        [Route("getProductByName")]
+        public Product GetProductByName(string name)
+        {
+            var product = catalogRepository.GetByName(name);
+            return product;
+        }
+
+        [HttpPost]
+        [Route("addProduct")]
+        public Product AddProduct(Product product)
+        {
+            catalogRepository.Create(product);
+            return product;
         }
 
     }
