@@ -12,14 +12,14 @@ namespace WebCatalog.Controllers
             return View();
         }
 
-        public ActionResult HomePage()
+        public ActionResult Catalog()
         {
-            return PartialView("HomePage");
+            return PartialView("Catalog");
         }
 
-        public ActionResult List()
+        public ActionResult AddProduct()
         {
-            return PartialView("List");
+            return PartialView("AddProduct");
         }
     }
 }

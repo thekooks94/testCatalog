@@ -2,19 +2,19 @@
 
 //Showing Routing  
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-    $routeProvider.when('/homepage',
+    $routeProvider.when('/catalog',
         {
-            templateUrl: 'Home/HomePage',
-            controller: 'homeController'
+            templateUrl: 'Home/Catalog',
+            controller: 'catalogController'
         });
-    $routeProvider.when('/list',
+    $routeProvider.when('/addProduct',
         {
-            templateUrl: 'Home/List',
-            controller: 'listController'
+            templateUrl: 'Home/AddProduct',
+            controller: 'addProductController'
         });
     $routeProvider.otherwise(
         {
-            redirectTo: '/'
+            redirectTo: '/catalog'
         });
 
     $locationProvider.html5Mode({

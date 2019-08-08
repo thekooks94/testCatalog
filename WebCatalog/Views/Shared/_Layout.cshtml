@@ -1,21 +1,23 @@
 ﻿<!DOCTYPE html>
 <html lang="it">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
-    <title>@ViewBag.Title - Applicazione ASP.NET</title>
+    <title>Catalogo Prodotti</title>
     <link href="https://img.icons8.com/clouds/100/000000/bookmark-ribbon.png" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body data-ng-app="ApplicationModule">
+
+    @Html.Partial("~/Views/Shared/Header.cshtml");
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Applicazione ASP.NET</p>
-        </footer>
     </div>
+
+    @Html.Partial("~/Views/Shared/Footer.cshtml");
 
     @RenderSection("Scripts", required: false)
 </body>
