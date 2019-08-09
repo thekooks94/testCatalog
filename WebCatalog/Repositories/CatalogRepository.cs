@@ -10,12 +10,6 @@ namespace WebCatalog.Repositories
 {
     public class CatalogRepository : IRepository<Product>
     {
-        private FakeCatalog data {get; set;} //Instead of using DB, there is a dictionary in memory
-        public CatalogRepository()
-        {
-            data = new FakeCatalog();
-        }
-
         public void Create(Product entity)
         {
             if(entity == null || string.IsNullOrEmpty(entity.Name) || entity.Quantity <= 0)
@@ -23,18 +17,18 @@ namespace WebCatalog.Repositories
                 throw new Exception("Campi inseriti non validi");
             }
 
-            if (data.Catalog.Products.ContainsKey(entity.Name.ToLowerInvariant()))
+            if (FakeCatalog.Catalog.Products.ContainsKey(entity.Name.ToLowerInvariant()))
             {
                 throw new Exception("Prodotto con stesso nome, già presente nel catalogo");
             }
 
-            data.Catalog.Products.Add(entity.Name.ToLowerInvariant(), entity);
+            FakeCatalog.Catalog.Products.Add(entity.Name.ToLowerInvariant(), entity);
             return;
         }
 
         public Product GetByName(string name)
         {
-            data.Catalog.Products.TryGetValue(name.ToLowerInvariant(), out Product product);
+            FakeCatalog.Catalog.Products.TryGetValue(name.ToLowerInvariant(), out Product product);
 
             if (product == null)
             {
@@ -46,7 +40,7 @@ namespace WebCatalog.Repositories
 
         public IEnumerable<Product> GetAllEntity()
         {
-            return data.Catalog.Products.Values;
+            return FakeCatalog.Catalog.Products.Values;
         }
     }
 }

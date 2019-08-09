@@ -6,13 +6,9 @@ using WebCatalog.Models;
 
 namespace WebCatalog.FakeData
 {
-    public class FakeCatalog
+    public static class FakeCatalog
     {
-        public Catalog Catalog { get; set; }
-
-        public FakeCatalog()
-        {
-            Catalog = new Catalog
+        public static Catalog Catalog = new Catalog
             {
                 Products = new Dictionary<string, Product>() {
                 {"seagate expansion portable", new Product { Name = "Seagate Expansion Portable", Description = "", Quantity = 8 }},
@@ -23,6 +19,5 @@ namespace WebCatalog.FakeData
                 {"electroline set di valigie trolley", new Product { Name = "Electroline set di valigie trolley", Description = "Ginza Set Trolley Rigide c/TSA Lock Pic + Med + Gr Blue. Set trolley rigidi", Quantity = 6 }}
                 }
             };
-        }
     }
 }

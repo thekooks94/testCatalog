@@ -3,17 +3,21 @@
     <h3>Aggiungi prodotto</h3>
     <h4>Inserisci i campi seguenti per aggiungere un nuovo prodotto al catalogo</h4>
     <fieldset>
-        <input id="product-name" placeholder="Nome prodotto" type="text" tabindex="1" required autofocus>
+        <label for="product-name">Nome*</label>
+        <input id="product-name" ng-model="product.name" placeholder="Nome prodotto" type="text" tabindex="1" required autofocus ng-change="enableButton()">
     </fieldset>
     <fieldset>
-        <input id="product-quantity" placeholder="Quantità" type="number" min="1" required>
+        <label for="product-quantity">Quantità*</label>
+        <input id="product-quantity" ng-model="product.quantity" placeholder="Quantità" type="number" min="1" required ng-change="enableButton()" />
     </fieldset>
     <fieldset>
-        <textarea id="product-description" placeholder="Inserisci una breve descrizione" tabindex="3"></textarea>
+        <label for="product-description">Descrizione</label>
+        <textarea id="product-description" ng-model="product.description" placeholder="Inserisci una breve descrizione" tabindex="3"></textarea>
     </fieldset>
     <fieldset>
-        <button type="button" id="product-open-confirm" ng-click="showModal()">Aggiungi</button>
+        <button type="button" class="button6" id="product-open-confirm" ng-click="showModal()" disabled>Aggiungi</button>
     </fieldset>
+    <span style="font-size: 12px;">Campi obbligatori*</span>
 </div>
 
 <br />
@@ -23,8 +27,22 @@
     <!-- Modal content -->
     <div class="modal-content">
         <span class="close" ng-click="hideModal()" style="margin-left:2px;">&times;</span>
-        <p>Vuoi confermare l'aggiunta del nuovo prodotto</p>
-        <button type="button" id="product-submit">Aggiungi</button>
+        <h3>Vuoi aggiungere il seguente prodotto?</h3>
+        <p>Nome: {{product.name}}</p>
+        <p>Quantità: {{product.quantity}}</p>
+        <p ng-show="product.description != ''">Descrizione: {{product.description}}</p>
+        <button type="button" class="button-add" id="product-submit" ng-click="addProduct()">Aggiungi</button>
+    </div>
+
+</div>
+
+<div id="myModalEnd" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close" ng-click="hideModalEnd()" style="margin-left:2px;">&times;</span>
+        <h3>{{modal.message}}</h3>
+        <a id="gotocatalog" class="button-add"  href="catalog">Catalogo</a>
     </div>
 
 </div>
