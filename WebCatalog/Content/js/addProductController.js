@@ -6,11 +6,17 @@
         method: "GET",
         url: "/api/catalog/getAllProducts"
     }).then(function mySuccess(response) {
-        console.log(response);
         $scope.products = response;
     }, function myError(response) {
 
     });
 
+    $scope.showModal = function () {
+        document.getElementById('myModal').style.display = "block";
+    };
+
+    $scope.hideModal = function () {
+        document.getElementById('myModal').style.display = "none";
+    };
 
 });  

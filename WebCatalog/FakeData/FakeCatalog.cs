@@ -15,7 +15,7 @@ namespace WebCatalog.FakeData
             Catalog = new Catalog
             {
                 Products = new Dictionary<string, Product>() {
-                {"seagate expansion portable 1tb disco rigido esterno nero", new Product { Name = "Seagate Expansion Portable 1TB disco rigido esterno Nero", Description = "", Quantity = 8 }},
+                {"seagate expansion portable", new Product { Name = "Seagate Expansion Portable", Description = "", Quantity = 8 }},
                 {"google home", new Product { Name = "Google Home", Description = "L'Assistente Google per la casa con controllo vocale.", Quantity = 11 }},
                 {"canon eos 4000d kit fotocamere", new Product { Name = "Canon EOS 4000D Kit fotocamere", Description = "", Quantity = 2 }},
                 {"samsung galaxy", new Product { Name = "Samsung Galaxy", Description = "", Quantity = 1 }},

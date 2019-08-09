@@ -1,1 +1,30 @@
 ﻿<link href="~/Content/css/addProduct.css" rel="stylesheet" />
+<div class="container" id="product">
+    <h3>Aggiungi prodotto</h3>
+    <h4>Inserisci i campi seguenti per aggiungere un nuovo prodotto al catalogo</h4>
+    <fieldset>
+        <input id="product-name" placeholder="Nome prodotto" type="text" tabindex="1" required autofocus>
+    </fieldset>
+    <fieldset>
+        <input id="product-quantity" placeholder="Quantità" type="number" min="1" required>
+    </fieldset>
+    <fieldset>
+        <textarea id="product-description" placeholder="Inserisci una breve descrizione" tabindex="3"></textarea>
+    </fieldset>
+    <fieldset>
+        <button type="button" id="product-open-confirm" ng-click="showModal()">Aggiungi</button>
+    </fieldset>
+</div>
+
+<br />
+
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close" ng-click="hideModal()" style="margin-left:2px;">&times;</span>
+        <p>Vuoi confermare l'aggiunta del nuovo prodotto</p>
+        <button type="button" id="product-submit">Aggiungi</button>
+    </div>
+
+</div>

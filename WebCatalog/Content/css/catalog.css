@@ -23,6 +23,21 @@ body {
     }
 
 /* Responsive columns */
+@media screen and (max-width: 900px) {
+    .column {
+        width: 33%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .column {
+        width: 50%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
 @media screen and (max-width: 600px) {
     .column {
         width: 100%;
@@ -40,4 +55,8 @@ body {
     height: 350px;
     margin: 3px;
     margin-bottom: 10px;
+}
+
+h2 {
+   margin-top: 5px;
 }

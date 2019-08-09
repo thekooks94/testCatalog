@@ -2,22 +2,27 @@
 
     $scope.products = [];
 
-    $http({
-        method: "GET",
-        url: "/api/catalog/getAllProducts"
-    }).then(function mySuccess(response) {
-        console.log(response.data);
-        $scope.products = response.data;
-        if ($scope.products === null || $scope.products.length === 0) {
-            document.getElementById('no-products').style.display = "block";
-        }
-        else {
-            document.getElementById('no-products').style.display = "none";
+    function getCatalog() {
+        $http({
+            method: "GET",
+            url: "/api/catalog/getAllProducts"
+        }).then(function mySuccess(response) {
+            $scope.products = response.data;
+            if ($scope.products === null || $scope.products.length === 0) {
+                if (document.getElementById('no-products') !== null)
+                    document.getElementById('no-products').style.display = "block";
+            }
+            else {
+                if (document.getElementById('no-products') !== null)
+                document.getElementById('no-products').style.display = "none";
             }
         }, function myError(response) {
-            document.getElementById('no-products').style.display = "block";
-    });
+                if (document.getElementById('no-products') !== null)
+                document.getElementById('no-products').style.display = "block";
+        });
+    }
 
-
+    getCatalog();
+    setInterval(getCatalog, 6000);
 
 });  

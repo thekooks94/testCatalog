@@ -11,13 +11,13 @@
 </head>
 <body data-ng-app="ApplicationModule">
 
-    @Html.Partial("~/Views/Shared/Header.cshtml");
+    @Html.Partial("~/Views/Shared/Header.cshtml")
 
     <div class="container body-content">
         @RenderBody()
     </div>
 
-    @Html.Partial("~/Views/Shared/Footer.cshtml");
+    @Html.Partial("~/Views/Shared/Footer.cshtml")
 
     @RenderSection("Scripts", required: false)
 </body>
