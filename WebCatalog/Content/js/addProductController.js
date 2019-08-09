@@ -13,7 +13,12 @@
             $scope.hideModal();
             $scope.showModalEnd();
         }, function myError(response) {
-            $scope.modal.message = response.data.exceptionMessage;
+            if (response.data.exceptionMessage === null || response.data.exceptionMessage === undefined || response.data.exceptionMessage === "") {
+                $scope.modal.message = "Il prodotto non è stato inserito. Campi non valido o prodotto già presente.";
+            }
+            else {
+                $scope.modal.message = response.data.exceptionMessage;
+            }
             $scope.hideModal();
             $scope.showModalEnd();
         });
