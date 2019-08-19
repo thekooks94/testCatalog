@@ -13,9 +13,10 @@ namespace WebCatalog.Controllers.Api
     public class CatalogController : ApiController
     {
         protected IRepository<Product> catalogRepository;
-        public CatalogController()
+
+        public CatalogController(IRepository<Product> repository)
         {
-            catalogRepository = new CatalogRepository();
+            catalogRepository = repository;
         }
 
         [HttpGet]
